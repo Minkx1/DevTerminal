@@ -1,6 +1,5 @@
 ﻿from libs.simple_tk import Window, VBox, HBox, TextBox, Entry, Button, Label
 import customtkinter as CTk
-import os
 import threading
 import shlex
 
@@ -14,7 +13,7 @@ class Terminal(Window):
         self.history_idx = -1
         self._eval_callback = eval_cmd
         
-        self.header = f"{title} [V{VERSION}] by {AUTHOR}\n\n{self.current_path}>"
+        self.header = f"{title} [V{VERSION}] by {AUTHOR}\n"
         super().__init__(title, size)
 
     def cmd_eval(self, func):
