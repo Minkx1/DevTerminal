@@ -11,14 +11,10 @@ A lightweight desktop terminal application built with a `customtkinter`.
 
 ## Usage
 
-1. Install required dependencies from `requirements.txt`.
-2. Run the app:
-
-   ```bash
-   python main.py
-   ```
-
-3. Enter commands in the input field and press `Run` or `Enter`.
+1. Install with
+```bash
+pip install git+https://github.com/Minkx1/DevTerminal.git
+```
 
 ## Example of usage
 
@@ -48,8 +44,3 @@ def test(cmd: list[str]):
 
 app.run(__file__) # __file__ for debug-mode
 ```
-
-## Notes
-
-- The terminal keeps a command history and prevents duplicate consecutive history entries.
-- The UI prompt updates to show the current working directory.
