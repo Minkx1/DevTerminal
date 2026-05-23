@@ -19,6 +19,7 @@ pip install git+https://github.com/Minkx1/DevTerminal.git
 ## Example of usage
 
 ```python
+from terminal import Terminal
 app = Terminal("Terminal", (SCREEN_W, SCREEN_H))
 state_db = {}
 
