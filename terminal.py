@@ -78,7 +78,7 @@ class Terminal(Window):
         self.history_idx = -1
 
         self.entry.delete(0, "end")
-        self.log(f" {cmd}\n")
+        self.log(f"> {cmd}\n")
 
         threading.Thread(target=self._run_proc, args=(cmd,), daemon=True).start()
 
