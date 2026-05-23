@@ -7,11 +7,9 @@ import shlex
 SCREEN_W, SCREEN_H = 900, 500
 VERSION = "1.0"
 NAME = "DevTerminal"
-AUTHOR = "Minkx1"
 
 class Terminal(Window):
     def __init__(self, title=NAME, size=(SCREEN_W, SCREEN_H), eval_cmd=None):
-        self.current_path = os.getcwd()
         self.history = []
         self.history_idx = -1
         self._eval_callback = eval_cmd
@@ -107,14 +105,10 @@ class Terminal(Window):
                 return
 
             if not self._eval_basic_cmd(cmd_parts):
-                # 2. Якщо розробник зареєстрував свій @cmd_eval, передаємо команду йому
                 if self._eval_callback:
                     result = self._eval_callback(cmd_parts)
-                    
-                    # Якщо функція щось повернула (рядок) — друкуємо його
                     if result is not None:
                         self.log(str(result) + "\n")
-                        self.log(f"\n{self.current_path}>")
                         return 
             else:
                 return
@@ -122,12 +116,10 @@ class Terminal(Window):
         except Exception as e:
             self.log(f"Error: {e}\n")
 
-        self.log(f"\n{self.current_path}>")
 
     def _clear_screen(self):
         self.txt.configure(state="normal")
         self.txt.delete("0.0", "end")
-        self.txt.insert("0.0", f"{self.current_path}>")
         self.txt.configure(state="disabled")
 
 # Example of usage
