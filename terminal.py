@@ -13,7 +13,7 @@ class Terminal(Window):
         self.history_idx = -1
         self._eval_callback = eval_cmd
         
-        self.header = f"{title} [V{VERSION}] by {AUTHOR}\n"
+        self.header = f"{title} [V{VERSION}]\n"
         super().__init__(title, size)
 
     def cmd_eval(self, func):
