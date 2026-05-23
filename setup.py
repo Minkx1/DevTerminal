@@ -15,7 +15,7 @@ setup(
     url="",
     package_dir={"": "."},
     packages=find_namespace_packages(include=["libs.*"]),
-    py_modules=["devterminal"],
+    py_modules=["terminal"],
     install_requires=["customtkinter"],
     python_requires=">=3.11",
     classifiers=[
